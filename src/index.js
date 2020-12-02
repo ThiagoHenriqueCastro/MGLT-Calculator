@@ -4,17 +4,16 @@ import App from "./app";
 import { GlobalStyles } from "./global-styles";
 
 import { Provider } from "react-redux";
-import { createStore, applyMiddleware } from "redux";
-import thunk from "redux-thunk";
-import reducers from "./redux/reducers";
-
-let store = createStore(reducers, applyMiddleware(thunk));
+import { PersistGate } from "redux-persist/integration/react";
+import { store, persistor } from "./redux/configureStore";
 
 render(
   <>
     <Provider store={store}>
-      <GlobalStyles />
-      <App />
+      <PersistGate persistor={persistor}>
+        <GlobalStyles />
+        <App />
+      </PersistGate>
     </Provider>
   </>,
   document.getElementById("root")

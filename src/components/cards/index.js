@@ -4,7 +4,8 @@ import {
   Inner,
   Item,
   Row,
-  Icon,
+  IconEmpire,
+  IconRebel,
   Title,
   SubTitle,
   InfoContainer,
@@ -27,8 +28,12 @@ Cards.Row = function CardsRow({ children, ...restProps }) {
   return <Row {...restProps}>{children}</Row>;
 };
 
-Cards.Icon = function CardsIcon({ children, ...restProps }) {
-  return <Icon {...restProps}>{children}</Icon>;
+Cards.Icon = function CardsIcon({ isEmpire, children, ...restProps }) {
+  return isEmpire ? (
+    <IconEmpire {...restProps}>{children}</IconEmpire>
+  ) : (
+    <IconRebel {...restProps}>{children}</IconRebel>
+  );
 };
 
 Cards.Title = function CardsTitle({ children, ...restProps }) {
