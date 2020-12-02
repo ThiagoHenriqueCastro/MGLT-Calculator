@@ -36,19 +36,10 @@ const CardsContainer = (props) => {
     setStarships(calculatedData);
   };
 
-  const handleInput = (event) => {
-    const input = event.target.value;
-    setInput(input);
-  };
-
   return (
     <>
       <OptForm>
-        <OptForm.Input
-          onChange={handleInput}
-          value={input}
-          placeholder="Distance in MGLT"
-        />
+        <OptForm.Input placeholder="Distance in MGLT" />
         <OptForm.Button handleButton={handleButton}>CALCULATE</OptForm.Button>
       </OptForm>
 

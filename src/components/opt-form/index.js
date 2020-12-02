@@ -5,8 +5,8 @@ export default function OptForm({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
 }
 
-OptForm.Input = function OptFormInput({ value, onChange, ...restProps }) {
-  return <Input onChange={onChange()} value={value} {...restProps} />;
+OptForm.Input = function OptFormInput({ ...restProps }) {
+  return <Input {...restProps} />;
 };
 
 OptForm.Button = function OptFormButton({
