@@ -35,6 +35,7 @@ export const Button = styled.button`
   font-size: 26px;
   border: 0;
   cursor: pointer;
+  border-radius: 0px 20px 20px 0px; 
 
   &:hover {
     background: #111;
@@ -48,6 +49,7 @@ export const Button = styled.button`
       max-width: 450px;
       width: 100%;
       justify-content: center;
+      border-radius: 20px;
     }
   }
 `;

@@ -21,14 +21,14 @@ const CardsContainer = (props) => {
     if (listStarships.length === 0) {
       getStarships();
     }
-    toggleLoading(false);
+    //toggleLoading(false);
   }, [getStarships, listStarships.length]);
 
   const handleButton = () => {
-    if (loading) {
+    if (input === "") {
+      toggleLoading(true);
       return;
     } else {
-      toggleLoading(true);
       const data = [...listStarships];
       console.log(JSON.stringify(data));
       const calculatedData = listStarships.map((starship) => {
@@ -59,6 +59,10 @@ const CardsContainer = (props) => {
       {loading ? (
         <Loading>
           <Loading.Lottie />
+          <Loading.TextInfo>No results :c</Loading.TextInfo>
+          <Loading.TextInfo>
+            Provide a distance and may the force stay with you!
+          </Loading.TextInfo>
         </Loading>
       ) : (
         <Cards>
@@ -98,7 +102,12 @@ const CardsContainer = (props) => {
                   <Cards.SubTitle>MGLT</Cards.SubTitle>
                   <Cards.Title>{item.MGLT}</Cards.Title>
                 </Cards.InfoContainer>
-                <Cards.Result>{item.stops} stops</Cards.Result>
+                <Cards.Result>
+                  {item.MGLT === "unknown" || item.MGLT === "unknown"
+                    ? "Unknown"
+                    : item.stops}{" "}
+                  stops
+                </Cards.Result>
               </Cards.Row>
             </Cards.Item>
           ))}
