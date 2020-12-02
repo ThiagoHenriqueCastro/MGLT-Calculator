@@ -1,12 +1,28 @@
-import React from "react";
+import React, { createContext, useContext } from "react";
 import { Container, Input, Button } from "./styles/opt-form";
 
+const InputContext = createContext();
+
+const useInputContext = () => {
+  const context = useContext(InputContext);
+  if (!context) {
+    throw new Error("");
+  }
+
+  return context;
+};
+
 export default function OptForm({ children, ...restProps }) {
-  return <Container {...restProps}>{children}</Container>;
+  return (
+    <InputContext.Provider value={restProps}>
+      <Container {...restProps}>{children}</Container>
+    </InputContext.Provider>
+  );
 }
 
 OptForm.Input = function OptFormInput({ ...restProps }) {
-  return <Input {...restProps} />;
+  const { value, OnChange } = useInputContext();
+  return <Input value={value} onChange={OnChange} {...restProps} />;
 };
 
 OptForm.Button = function OptFormButton({

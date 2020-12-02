@@ -10,7 +10,7 @@ import { store, persistor } from "./redux/configureStore";
 render(
   <>
     <Provider store={store}>
-      <PersistGate persistor={persistor}>
+      <PersistGate loading={null} persistor={persistor}>
         <GlobalStyles />
         <App />
       </PersistGate>
