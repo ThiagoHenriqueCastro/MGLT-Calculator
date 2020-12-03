@@ -4,6 +4,7 @@ import { FaEmpire, FaRebel } from "react-icons/fa";
 
 export const Container = styled.div`
   display: flex;
+  min-height: 80vh;
 `;
 
 export const Item = styled.div`

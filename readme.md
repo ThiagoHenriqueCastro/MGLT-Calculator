@@ -62,10 +62,14 @@ src/
 		- index.js
 	- redux/
 	- services/
+	- utils/
 ```
 
 ### Services
-Na pasta services estão as funções auxiliares de cálculos, bem como a definição da api.
+Na pasta services estão as funções auxiliares, bem como a definição da api.
+
+### Utils
+Auxilia nos calculos.
 
 ### Fixtures
 Nessa pasta estão os arquivos de mock data

@@ -2,7 +2,8 @@ import React, { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 //import starshipsData from "../fixtures/starships.json";
 import { Cards, OptForm, Loading } from "../components/";
-import { StarshipService, CalculateService } from "../services/";
+import { StarshipService } from "../services/";
+import { MGLTUtils } from "../utils/";
 import { addStarShips } from "../redux/Starships";
 
 const CardsContainer = (props) => {
@@ -39,7 +40,7 @@ const CardsContainer = (props) => {
       const data = [...listStarships];
       console.log(JSON.stringify(data));
       const calculatedData = listStarships.map((starship) => {
-        const stops = CalculateService.calculateStopsByGivenDistance(
+        const stops = MGLTUtils.calculateStopsByGivenDistance(
           input,
           starship.MGLT,
           starship.consumables
