@@ -15,6 +15,7 @@ export const Item = styled.div`
   padding: 15px;
   width: 350px;
   box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.1);
+  align-self: center;
   @media (max-width: 1000px) {
     width: 100%;
   }
@@ -29,6 +30,7 @@ export const Inner = styled.div`
   max-width: 90%;
   margin: auto;
   justify-items: center;
+  justify-content: center;
   width: 100vw;
 
   @media only screen and (max-width: 768px) {
