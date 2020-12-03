@@ -47,7 +47,6 @@ export const IconRebel = styled(FaRebel)`
 `;
 
 export const InfoContainer = styled.div`
-  justify-content: space-between;
   margin: 5px;
 `;
 
@@ -73,5 +72,8 @@ export const SubTitle = styled.p`
 export const Result = styled.p`
   margin: 0;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 26px;
+  @media (max-width: 10000px) {
+    text-align: right;
+  }
 `;

@@ -8,6 +8,9 @@ import { addStarShips } from "../redux/Starships";
 const CardsContainer = (props) => {
   const [input, setInput] = useState("");
   const [loading, toggleLoading] = useState(true);
+  const [loadingInfo, setLoadingInfo] = useState(
+    "Loading data... wait a second Jedi :)"
+  );
   const [starships, setStarships] = useState([]);
   const dispatch = useDispatch();
   const listStarships = useSelector((state) => state.starshipReducer);
@@ -20,12 +23,16 @@ const CardsContainer = (props) => {
   useEffect(() => {
     if (listStarships.length === 0) {
       getStarships();
+      setLoadingInfo("Provide a distance and may the force be with you! :)");
     }
     //toggleLoading(false);
   }, [getStarships, listStarships.length]);
 
   const handleButton = () => {
-    if (input === "") {
+    if (listStarships.length === 0) {
+      return;
+    } else if (input === "") {
+      setLoadingInfo("Provide a distance and may the force be with you! :)");
       toggleLoading(true);
       return;
     } else {
@@ -56,13 +63,10 @@ const CardsContainer = (props) => {
         <OptForm.Button handleButton={handleButton}>CALCULATE</OptForm.Button>
       </OptForm>
 
-      {loading ? (
+      {loading || starships.length === 0 ? (
         <Loading>
           <Loading.Lottie />
-          <Loading.TextInfo>No results :c</Loading.TextInfo>
-          <Loading.TextInfo>
-            Provide a distance and may the force be with you!
-          </Loading.TextInfo>
+          <Loading.TextInfo>{loadingInfo}</Loading.TextInfo>
         </Loading>
       ) : (
         <Cards>
