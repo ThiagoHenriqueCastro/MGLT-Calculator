@@ -19,7 +19,6 @@ const CardsContainer = (props) => {
 
   useEffect(() => {
     if (listStarships.length === 0) {
-      toggleLoading(true);
       getStarships();
     }
     //toggleLoading(false);
