@@ -39,4 +39,8 @@ export const Title = styled.div`
   color: black;
   font-size: 26px;
   font-weight: bold;
+
+  @media (max-width: 1000px) {
+    font-size: 18px;
+  }
 `;

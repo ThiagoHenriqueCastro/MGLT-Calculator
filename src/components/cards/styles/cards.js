@@ -22,13 +22,18 @@ export const Item = styled.div`
 
 export const Inner = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, max-content));
+  grid-template-columns: repeat(auto-fit, minmax(350px, auto));
   grid-template-rows: repeat(auto-fill, minmax(350px, max-content));
   grid-gap: 15px;
   padding: 70px 45px;
   max-width: 90%;
   margin: auto;
   justify-items: center;
+  width: 100vw;
+
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const IconEmpire = styled(FaEmpire)`

@@ -61,7 +61,7 @@ const CardsContainer = (props) => {
           <Loading.Lottie />
           <Loading.TextInfo>No results :c</Loading.TextInfo>
           <Loading.TextInfo>
-            Provide a distance and may the force stay with you!
+            Provide a distance and may the force be with you!
           </Loading.TextInfo>
         </Loading>
       ) : (

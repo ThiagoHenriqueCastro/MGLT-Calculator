@@ -1,10 +1,10 @@
 import React from "react";
-import { Container, TextInfo } from "./styles/loading";
+import { Wrapper, TextInfo } from "./styles/loading";
 import Lottie from "react-lottie";
 import animationData from "../../bb8.json";
 
 export default function Loading({ children, ...restProps }) {
-  return <Container {...restProps}>{children}</Container>;
+  return <Wrapper {...restProps}>{children}</Wrapper>;
 }
 
 Loading.Lottie = function LoadingLottie({ ...restProps }) {

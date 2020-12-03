@@ -49,7 +49,7 @@ export const Button = styled.button`
       max-width: 450px;
       width: 100%;
       justify-content: center;
-      border-radius: 20px;
+      border-radius: 0px;
     }
   }
 `;
