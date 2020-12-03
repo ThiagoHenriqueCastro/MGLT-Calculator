@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
 export const TextInfo = styled.h1`
   color: black;
   font-weight: bold;
-  font-size: 26;
+  font-size: 26px;
   text-align: center;
 
   @media (max-width: 1000px) {

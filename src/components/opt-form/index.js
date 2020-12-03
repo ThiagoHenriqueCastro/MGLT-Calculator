@@ -22,7 +22,9 @@ export default function OptForm({ children, ...restProps }) {
 
 OptForm.Input = function OptFormInput({ ...restProps }) {
   const { value, OnChange } = useInputContext();
-  return <Input value={value} onChange={OnChange} {...restProps} />;
+  return (
+    <Input type="number" value={value} onChange={OnChange} {...restProps} />
+  );
 };
 
 OptForm.Button = function OptFormButton({
